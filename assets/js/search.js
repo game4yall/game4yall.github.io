@@ -29,7 +29,7 @@ function renderGames(gameDiv, gamesData) {
                 <div class="list-game new">
                   <div class="list-thumbnail">
                     <img src=""${game.img}""
-                      class="small-thumb lazyload" alt="Temple Run">
+                      class="small-thumb lazyload">
                   </div>
                   <div class="list-info">
                     <div class="list-title ellipsis">"${game.name}"</div>
