@@ -7,13 +7,11 @@ document.addEventListener("DOMContentLoaded", async function () {
   const game = document.getElementById("search-result");
 
   renderGames(game, data.items);
-
   const search = document.getElementById("search-input");
-  search.addEventListener("input", function (event) {
-    // Changed event from 'keydown' to 'input' for real-time search
-    const searchValue = event.target.value.toLowerCase(); // Convert search value to lowercase for case-insensitive search
+  search.addEventListener("keydown", function (event) {
+    const searchValue = event.target.value;
     const filteredGames = data.items.filter((game) => {
-      return game.name.toLowerCase().includes(searchValue);
+      return game.name.toLowerCase().includes(searchValue.toLowerCase());
     });
     renderGames(game, filteredGames);
   });
@@ -21,24 +19,29 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 function renderGames(gameDiv, gamesData) {
   let innerHTML = "";
-  gamesData.forEach((game) => {
-    // Removed '.array' from 'gamesData'
+  gamesData.array.forEach((game) => {
     innerHTML += `
-      <div class="col-xl-2 col-lg-3 col-md-4 col-6 grid-1">
-        <a href="/games/${game.gameid}.html"> <!-- Fixed href attribute -->
-          <div class="game-item">
-            <div class="list-game new">
-              <div class="list-thumbnail">
-                <img src="${game.img}" class="small-thumb lazyload"> <!-- Fixed src attribute -->
+
+					
+            <div class="col-xl-2 col-lg-3 col-md-4 col-6 grid-1">
+            <a href="/games/"${game.gameid}".html">
+              <div class="game-item">
+                <div class="list-game new">
+                  <div class="list-thumbnail">
+                    <img src=""${game.img}""
+                      class="small-thumb lazyload">
+                  </div>
+                  <div class="list-info">
+                    <div class="list-title ellipsis">"${game.name}"</div>
+                  </div>
+                </div>
               </div>
-              <div class="list-info">
-                <div class="list-title ellipsis">${game.name}</div> <!-- Removed unnecessary quotes -->
-              </div>
-            </div>
+            </a>
           </div>
-        </a>
-      </div>
-    `;
+
+					
+
+        `;
   });
   gameDiv.innerHTML = innerHTML;
 }
