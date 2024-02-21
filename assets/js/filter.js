@@ -4,10 +4,10 @@ document.addEventListener("DOMContentLoaded", async function () {
   );
 
   const data = await response.json();
-  const game = document.getElementById("container-fluid container-section");
+  const game = document.getElementById("search-result");
 
   renderGames(game, data.items);
-  const search = document.getElementById("form-control search");
+  const search = document.getElementsByClassName("form-control search");
   search.addEventListener("keydown", function (event) {
     const searchValue = event.target.value;
     const filteredGames = data.items.filter((game) => {
