@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   const game = document.getElementById("search-result");
 
   renderGames(game, data.items);
-  const search = document.getElementsByClassName("form-control search");
+  const search = document.getElementsById("search-input");
   search.addEventListener("keydown", function (event) {
     const searchValue = event.target.value;
     const filteredGames = data.items.filter((game) => {
