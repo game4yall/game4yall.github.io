@@ -27,7 +27,7 @@ function renderGames(gameDiv, gamesData) {
 								<div class="game-item">
 									<div class="list-game new">
 										<div class="list-thumbnail">
-											<img src=""${game.img}".jpg"
+											<img src=""${game.img}""
 												class="small-thumb lazyload">
 										</div>
 										<div class="list-info">
