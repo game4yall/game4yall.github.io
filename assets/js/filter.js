@@ -7,12 +7,12 @@ document.addEventListener("DOMContentLoaded", async function () {
   const game = document.getElementById("search-result");
 
   renderGames(game, data.items);
+
   const search = document.querySelector(".form-control.search");
   search.addEventListener("input", function (event) {
-    // Change event type to 'input'
-    const searchValue = event.target.value;
+    const searchValue = event.target.value.toLowerCase(); // Convert search value to lowercase
     const filteredGames = data.items.filter((game) => {
-      return game.name.toLowerCase().includes(searchValue.toLowerCase());
+      return game.name.toLowerCase().includes(searchValue);
     });
     renderGames(game, filteredGames);
   });
