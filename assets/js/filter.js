@@ -22,13 +22,6 @@ function renderGames(gameDiv, gamesData) {
   gamesData.array.forEach((game) => {
     innerHTML += `
 
-    <div class="section-title">
-						<h3>
-							 Search Results
-						</h3>
-					</div>
-					<div class="row listing" id="listing1">
-
 						<div class="col-xl-2 col-lg-3 col-md-4 col-6 grid-1">
 							<a href="/games/"${game.gameid}".html">
 								<div class="game-item">
